@@ -1,35 +1,39 @@
-#Singly Linear Linked List from 1 st node to 3rd skipping 2nd node
-from itertools import count
-
-
 class Node:
     def __init__(self, val):
         self.data = val
         self.next = None
+
+
 class LinkedList:
     def __init__(self):
         self.head = None
+
     def append(self, new_node):
-        if(self.head == None):
+        if self.head is None:
             self.head = new_node
         else:
-            temp=self.head
-            while(temp.next != None):
+            temp = self.head
+            while temp.next is not None:
                 temp = temp.next
-            temp.next = new_node #appending new node
+            temp.next = new_node  # appending new node
+
     def print(self):
         temp = self.head
-        while temp:
+        while temp is not None:
             print(temp.data)
-            temp = temp.next.next
-            
+            # Safely skip the next node
+            if temp.next is not None:
+                temp = temp.next.next
+            else:
+                break
 
-list=LinkedList()
-n1=Node(10)
-n2=Node(-20)
-n3=Node(30)
-list.append(n1)
-list.append(n2)
-list.append(n3)
+
+# Driver Code
+list = LinkedList()
+list.append(Node(10))
+list.append(Node(20))
+list.append(Node(30))
 list.append(Node(40))
-list.print()            
+list.append(Node(50))
+
+list.print()
