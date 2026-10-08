@@ -40,7 +40,7 @@ class LinkedList:
         current = self.head
         prev = None
 
-        while current is not None:
+        while (current):
             next_node = current.next
             current.next = prev
             prev = current
