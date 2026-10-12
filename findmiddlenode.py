@@ -175,7 +175,17 @@ def solution():
                 prev=prev.next
                 if prev:
                     temp=prev.next
+        #10] Concatenate two sll
+        def concatenate(self, other_list):
+            if not self.head:
+                self.head = other_list.head
+                return
 
+            temp = self.head
+            while temp.next:
+                temp = temp.next
+
+            temp.next = other_list.head
     # --- Execution Driver ---
     sll = SinglyLinkedList()
 
@@ -211,6 +221,18 @@ def solution():
     
     print("\n--- 9. Deleting Alternate Nodes ---")
     sll.delete_alternate_nodes()
+    sll.traverse()
+    
+    print("\n--- 10. Creating Second List (sll2) and Concatenating ---")
+    sll2 = SinglyLinkedList()
+    for value in [110, 120, 130]:
+        sll2.create(value)
+
+    print("List 2 (sll2):")
+    sll2.traverse()
+
+    sll.concatenate(sll2)
+    print("Combined List (sll + sll2):")
     sll.traverse()
 
 
