@@ -165,6 +165,16 @@ def solution():
 
             prev.next = None
             print("First and last nodes deleted.")
+        #9] Delete alternate node in sll
+        def delete_alternate_nodes(self):
+            if not self.head:
+                print("List is empty")
+                return
+
+            current = self.head
+            while current and current.next:
+                current.next = current.next.next
+                current = current.next
 
     # --- Execution Driver ---
     sll = SinglyLinkedList()
