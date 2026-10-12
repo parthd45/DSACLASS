@@ -1,11 +1,4 @@
-# Create a Singly Linear Linked List with following operations
-# Create Linked List
-# Traverse and print the node values
-# Insert node at a specific position
-# Find Middle node and print its value
-# Delete node
-# Reverse list
-# Calculate the sum of every two consecutive node values.
+
 def solution():
     class Node:
         def __init__(self, val):
@@ -131,7 +124,6 @@ def solution():
 
             print("Consecutive pair sums:", ", ".join(sums))
 
-    # --- Driver Code / Operations Demonstration ---
     sll = SinglyLinkedList()
 
     print("--- 1. Creating Linked List ---")
