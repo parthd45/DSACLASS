@@ -167,20 +167,20 @@ def solution():
             print("First and last nodes deleted.")
         #9] Delete alternate node in sll
         def delete_alternate_nodes(self):
-            if not self.head:
-                print("List is empty")
-                return
-
-            current = self.head
-            while current and current.next:
-                current.next = current.next.next
-                current = current.next
+            prev= self.head
+            temp= self.head.next
+            while prev and temp:
+                prev.next=temp.next
+                temp=None##delte the node
+                prev=prev.next
+                if prev:
+                    temp=prev.next
 
     # --- Execution Driver ---
     sll = SinglyLinkedList()
 
     print("--- 1. Creating Linked List ---")
-    for value in [10, 20, 30, 40, 50]:
+    for value in [10, 20, 30, 40, 50,60,70,80,90,100]:
         sll.create(value)
 
     print("\n--- 2. Traversing List ---")
@@ -207,6 +207,10 @@ def solution():
 
     print("\n--- 8. Deleting First and Last Nodes ---")
     sll.delete_first_and_last()
+    sll.traverse()
+    
+    print("\n--- 9. Deleting Alternate Nodes ---")
+    sll.delete_alternate_nodes()
     sll.traverse()
 
 
