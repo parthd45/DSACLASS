@@ -24,12 +24,18 @@ class stack:
         if self.__isempty():
             print("Stack is empty")
         else:    
-            print("Stack elements:")
+            print("Stack elements Reversed:")
             temp=self.top
             while(temp):
                 print(temp.data)
                 temp=temp.next
+    def reverse(self):
+        temp=self.top
+        while temp:
+            s2.push(Node(temp.data))
+            temp=temp.next
 st=stack()
+s2=stack()
 st.push(Node(10))
 st.push(Node(20))
 st.push(Node(30))
@@ -38,3 +44,5 @@ st.push(Node(50))
 st.print()
 st.pop()
 st.print()
+st.reverse()
+s2.print()
