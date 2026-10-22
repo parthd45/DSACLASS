@@ -19,9 +19,8 @@ class stack:
             print("Stack elements:")
             temp=self.top
             while(temp):
-                print(temp.data,end=" ")
+                print(temp.data)
                 temp=temp.next
-                
 st=stack()
 st.push(Node(10))
 st.push(Node(20))
