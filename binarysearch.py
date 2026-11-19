@@ -1,12 +1,13 @@
 class Node:
-    def __init__(self,value):
+    def __init__(self, value):
         self.left=None
-        self.value=value
+        self.data=value
         self.right=None
+
 class BST:
     def __init__(self):
         self.root=None
-    def insert(self,new_node):
+    def insert(self, new_node):
         if self.root is None:
             self.root=new_node
             return
@@ -25,10 +26,21 @@ class BST:
                         return
                     else:
                         temp=temp.right
-    def inorder(self):
-        if self is None:
-            return
-        else:
-            self.inorder(self.left)
-            print(self.data, end="")             
-            self.inorder(self.right)       
+def inorder(temp):  #recursive method
+    if temp is None:
+        return
+    else:
+        inorder(temp.left)
+        print(temp.data, end=" ")
+        inorder(temp.right)
+
+btree=BST()
+btree.insert(Node(10))
+btree.insert(Node(36))
+btree.insert(Node(63))
+btree.insert(Node(5))
+btree.insert(Node(3))
+btree.insert(Node(9))
+btree.insert(Node(2))
+btree.insert(Node(8))
+inorder(btree.root)
