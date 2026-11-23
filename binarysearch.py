@@ -33,7 +33,8 @@ class BST:
         else:
             self.inorder(rt.left)
             print(rt.data, end=" ")
-            if rt.left is None and rt.right is None :
+            # if rt.left is None and rt.right is None :# for leaf count
+            if rt.left is not None or rt.right is not  None :#for non leaf node count 
                 self.lcnt+=1
             self.inorder(rt.right)
     def preorder(self, rt):
@@ -66,11 +67,12 @@ b1=BST()
 b1.insert(Node(100))
 b1.insert(Node(10))
 b1.insert(Node(450))
-b1.insert(Node(0))
+b1.insert(Node(20))
 b1.insert(Node(65))
 b1.insert(Node(300))
+b1.insert(Node(23))
 b1.inorder(b1.root)
-print("\nTotal Leaf Node :",b1.lcnt)
+print("\nTotal Non Leaf Node:",b1.lcnt)
 print("\nPreorder: ")
 b1.preorder(b1.root)
 print("\nPostorder: ")
