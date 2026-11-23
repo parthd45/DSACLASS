@@ -7,6 +7,7 @@ class Node:
 class BST:
     def __init__(self):
         self.root=None
+        self.cnt=0
        
     def insert(self, new_node):
         if self.root is None: ##BST is empty
@@ -32,6 +33,7 @@ class BST:
         else:
             self.inorder(rt.left)
             print(rt.data, end=" ")
+            self.cnt+=1
             self.inorder(rt.right)
     def preorder(self, rt):
         if rt is None:
