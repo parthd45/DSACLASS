@@ -83,6 +83,22 @@ class BST:
         self.postorder(rt.left)
         self.postorder(rt.right)
         print(rt.data, end=" ")
+    def level_order(self,rt):
+        if rt is None:
+            print("BST is Empty")
+            return
+        arr=[]
+        cnt=0#for counting visiting node 
+        arr.append(rt)
+        while cnt<len(arr):
+            temp=arr[cnt]
+            cnt+=1
+            print(temp.data,end=" ")
+            if temp.left:
+                arr.append(temp.left)
+            if temp.right:
+                arr.append(temp.right)    
+                
 
 b1=BST()
 b1.insert(Node(100))
@@ -100,3 +116,5 @@ b1.postorder(b1.root)
 b1.delete(b1.root, 10)
 print("\nAfter deleting 10:")
 b1.inorder(b1.root)
+print("\nLevel Order:")
+b1.level_order(b1.root)
